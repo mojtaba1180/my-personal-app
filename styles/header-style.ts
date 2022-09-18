@@ -1,8 +1,4 @@
 import styled from 'styled-components';
-import {
-    bgColor,
-    textColor, textHoverColor
-} from '../styles/variables';
 export const Header = styled.header`
     width:100%;
     display:flex;
@@ -15,7 +11,7 @@ export const HeaderLogo = styled.div`
     display: flex;
     justify-content: start;
     align-items: center;
-    color:${textColor}
+    color:${props => props.theme.textColor}
 `;
 
 export const HeaderMenu = styled.div`
@@ -41,7 +37,7 @@ export const HeaderMenuList = styled.ul`
         border: none;
         cursor: pointer;
         min-width: 100px;
-        color: ${textColor};
+        color: ${props => props.theme.textColor};
         & span {         
             position: relative;
             display: inline-block;
@@ -54,7 +50,7 @@ export const HeaderMenuList = styled.ul`
             padding: 3px 10px;
         }
         &:hover{
-            color:${textHoverColor};
+            color:${props => props.theme.textHoverColor};
         }
         &::before{
             position: absolute;
@@ -64,9 +60,8 @@ export const HeaderMenuList = styled.ul`
             left: 0;
             height: 100%;
             width: 0;
-            background: ${bgColor};
+            background: ${props => props.theme.bgColor};
             outline: 0!important;
-            outline-offset: 0;
             transition: 0.3s ease-out;
         }
         &:hover::before{

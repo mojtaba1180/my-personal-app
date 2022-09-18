@@ -1,5 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import { bgColor, textColor } from './variables';
 
 interface Props {
     size?: string;
@@ -32,18 +31,18 @@ export const Title = styled.p<Props>`
     text-transform: uppercase;
     font-weight: 700;
     position: relative;
-    color:${textColor};
+    color:${(props) => props.theme.textColor};
     padding-bottom: 20px;
     transition: .3s;
     overflow:hidden;
     height: 80px;
-     animation: ${titleParentAnimation} ease .4s forwards .3s;
+    animation: ${titleParentAnimation} ease .4s forwards .3s;
     &::before{
         content:'';
         position: absolute;
         width:200px;
         height:3px;
-        background: ${bgColor};
+        background: ${props => props.theme.bgColor};
         bottom: 0;
     }
      & span{

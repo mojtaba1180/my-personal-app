@@ -125,16 +125,6 @@ a {
   clip: rect(85px, 550px, 140px, 0);
   animation: glitch-anim 2s 1s linear infinite alternate-reverse;
 }
-@media (prefers-color-scheme: light) {
-  html {
-    color-scheme: light;
-  }
-  body {
-    color: white;
-    background: rgb(34, 34, 34);
-  }
-}
-
 
  @keyframes glitch-anim-flash {
     0%, 5% {
