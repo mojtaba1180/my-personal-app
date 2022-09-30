@@ -7,9 +7,9 @@ interface Props {
 const Transition = ({children}:Props) => {
   const {asPath} = useRouter();
   const variants = {
-     hidden: { opacity: 0, x: -100, y: 0  },
-    enter: { opacity: 1, x: 0, y: 0 },
-    exit: { opacity: 0, x: 100, y: 0 },
+     hidden: { opacity: 0, x: 0, y: -100,filter:"blur(30px)"  },
+    enter: { opacity: 1, x: 0, y: 0, filter:"blur(0px)" },
+    exit: { opacity: 0, x: 0, y: 100, filter:"blur(30px)" },
   }
   return (
     <AnimatePresence

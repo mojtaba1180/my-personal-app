@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { Content, Creative, Title } from '../styles/home-style'
+import { Content, Creative, Title } from './home-style'
 
 const Home: NextPage = () => {
   return (

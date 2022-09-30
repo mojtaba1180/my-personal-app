@@ -30,12 +30,6 @@ body {
   padding: 0;
   margin: 0;
 font-family: 'Play', sans-serif;
-
-
-
-
-
-
 }
 
 a {
@@ -70,6 +64,7 @@ a {
 }
 .glitch .glitch__item:nth-child(n+2) {
   opacity: 0;
+  background: url("./image.png") no-repeat 50% 50%/cover ;
   animation-duration: var(--time-anim);
   animation-delay: var(--delay-anim);
   animation-timing-function: linear;
