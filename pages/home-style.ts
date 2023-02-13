@@ -21,7 +21,7 @@ export const Content = styled.div`
     height:100%;
     width:100%;
     justify-content:center;
-    align-items:start;
+    align-items: center;
     padding-left: 10px;
   `;
 
@@ -44,14 +44,33 @@ export const Title = styled.p<Props>`
         height:3px;
         background: ${props => props.theme.bgColor};
         bottom: 0;
+        width: 100%;
     }
      & span{
         opacity: 0;
         position: relative;
         top:40px;
+        font-size: 80%;
         animation: ${titleAnimation} ease .4s forwards .3s;
+        @media screen and (max-width:640px){
+            font-size: 2rem;
+        }
      }
   `;
-export const Creative = styled.p`
+export const Creative = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
 
+    div{
+        display: flex;
+        gap:10px;
+
+        .social{
+            cursor:pointer;
+            &:hover{
+            }
+        }
+    }
 `

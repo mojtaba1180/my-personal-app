@@ -55,7 +55,6 @@ a {
   overflow: hidden;
 }
 .glitch .glitch__item {
-  background: url("./profile.jpg") no-repeat 50% 50%/cover;
   height: 100%;
   width: 100%;
   top: 0;
