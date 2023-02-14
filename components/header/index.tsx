@@ -1,32 +1,49 @@
 import Link from 'next/link';
 import ThemeButton from '../themeButton';
+import { useRouter } from 'next/router';
+
 import {
     Header as Head,
     HeaderLogo,
     HeaderMenu,
-    HeaderMenuList
+    HeaderMenuList,
+    MobileMenuButton
 } from './header-style';
-
+import { IconCategory,IconX } from '@tabler/icons-react';
+import { useState,useEffect } from 'react';
 interface Header {
     setTheme: Function;
     theme:boolean
 }
 
 const Header = ({setTheme, theme}:Header) => {
+
+    const router = useRouter();
+    const [toggleMenu , setToggleMenu] = useState(false)
+
+    const CloseMenu = () => {
+        setToggleMenu(false)
+    }
+
+    useEffect(() => {
+        router.events.on('routeChangeStart', CloseMenu);
+
+        return () => router.events.off('routeChangeStart', CloseMenu);
+    }, [router.events]);
   return (
     <Head>
         <HeaderLogo>
             SGR
         </HeaderLogo>
        
-        <HeaderMenu>
+        <HeaderMenu toggleMenu={toggleMenu} >
             <HeaderMenuList>
-                <Link href="/">
+            <Link href="/">
                     <li>
                         <span>Home</span>
                     </li>
                 </Link>
-                <Link href="/about">
+            <Link href="/about">
                     <li>
                         <span>About</span>
                     </li>
@@ -35,10 +52,14 @@ const Header = ({setTheme, theme}:Header) => {
                 <li><span>portfolio</span></li>
                 <li><span>contact</span></li>
             </HeaderMenuList>
+        <IconX className="close-btn" onClick={() => setToggleMenu(false)} />
+        </HeaderMenu>
             <ThemeButton 
             theme={theme}
             setTheme={setTheme} />
-        </HeaderMenu>
+            <MobileMenuButton onClick={() => setToggleMenu(true)}  >
+                <IconCategory />
+            </MobileMenuButton>
     </Head>
   )
 }

@@ -9,16 +9,19 @@ body{
 
 
 export const App = styled.div`
-width: 100vw;
-height:100vh;
-padding:0 4rem;
+  width: 100vw;
+  height:100vh;
+  padding:0 4rem;
+  @media screen and (max-width:920px) {
+    padding:0 1em;
+  }
 `;
 
 export const Main = styled.main`
     transition: all .3s;
     border-radius: 10px;
     width:100%;
-    height:86%;
+    height:90%;
     display: flex;
     background-color: ${(props) => props.theme.mainBg};
     overflow: hidden;

@@ -22,7 +22,7 @@ export const Content = styled.div`
     width:100%;
     justify-content:center;
     align-items: center;
-    padding-left: 10px;
+    padding-left: 0;
   `;
 
 export const Title = styled.p<Props>`

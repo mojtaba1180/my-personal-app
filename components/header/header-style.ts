@@ -11,7 +11,11 @@ export const HeaderLogo = styled.div`
     display: flex;
     justify-content: start;
     align-items: center;
-    color:${props => props.theme.textColor}
+    color:${props => props.theme.textColor};
+    transition:all .3s;
+     @media screen and  (max-width:920px){
+        width:100%;
+     }
 `;
 
 export const HeaderMenu = styled.div`
@@ -19,14 +23,36 @@ export const HeaderMenu = styled.div`
     width: 50%;
     justify-content: end;
     align-items: center;
-
+    transition:all .3s;
+    .close-btn{
+        display:none;
+    }
+    @media screen and (max-width:920px){
+        position:absolute;
+        top:0;
+        right: ${props => props.toggleMenu ? 0 : "-100%"};
+        width:100%;
+        height:100%;
+        background:  ${(props) => props.theme.bodyColor};
+        z-index:9999;
+        display:flex;
+        justify-content:center;
+        flex-direction:column;
+        
+        .close-btn{
+            display:block;
+            position: absolute;
+            top:10px;
+            right:10px;
+        }
+    }
     `;
 
 export const HeaderMenuList = styled.ul`
-
     display:flex;
     list-style: none;
     margin:0;
+    padding:0;
     li{
         padding: 8px 20px;
         transition: all .35s;
@@ -68,5 +94,30 @@ export const HeaderMenuList = styled.ul`
            width: 100%;
         }
     }
+    @media screen and  (max-width:920px){
+        display:flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items:center;
+        gap:1em;
+        li{
+            span{
+                font-size:25px;
+            }
 
-    `;
+        }
+    }
+ `;
+export const MobileMenuButton = styled.button`
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color:  ${(props) => props.theme.textColor};
+    border-radius: 100px;
+    transition: all .3s;
+    padding: 7px 5px 5px 5px ;
+    &:hover{
+        cursor: pointer;
+    background-color: ${(props) => props.theme.mainBg};
+  }
+`;
