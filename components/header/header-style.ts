@@ -30,7 +30,10 @@ export const HeaderMenu = styled.div`
     @media screen and (max-width:920px){
         position:absolute;
         top:0;
-        right: ${props => props.toggleMenu ? 0 : "-100%"};
+        right: 0;
+        visibility: ${props => props.toggleMenu ? "visible" : "hidden"};
+        opacity: ${props => props.toggleMenu ? "1" : "0"};
+        filter:blur(${props => props.toggleMenu ? 0 : "20px"});
         width:100%;
         height:100%;
         background:  ${(props) => props.theme.bodyColor};
