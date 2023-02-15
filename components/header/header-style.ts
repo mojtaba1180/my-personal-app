@@ -45,8 +45,11 @@ export const HeaderMenu = styled.div`
         .close-btn{
             display:block;
             position: absolute;
-            top:10px;
-            right:10px;
+            top:2em;
+            right:2em;
+            &:hover{
+                cursor:pointer;
+            }
         }
     }
     `;
@@ -119,8 +122,11 @@ export const MobileMenuButton = styled.button`
     border-radius: 100px;
     transition: all .3s;
     padding: 7px 5px 5px 5px ;
+    @media screen and (min-width:920px){
+        display: none;
+    }
     &:hover{
         cursor: pointer;
-    background-color: ${(props) => props.theme.mainBg};
+        background-color: ${(props) => props.theme.mainBg};
   }
 `;

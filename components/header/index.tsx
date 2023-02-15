@@ -9,7 +9,7 @@ import {
     HeaderMenuList,
     MobileMenuButton
 } from './header-style';
-import { IconCategory,IconX } from '@tabler/icons-react';
+import { IconMenu2,IconX } from '@tabler/icons-react';
 import { useState,useEffect } from 'react';
 interface Header {
     setTheme: Function;
@@ -57,8 +57,8 @@ const Header = ({setTheme, theme}:Header) => {
             <ThemeButton 
             theme={theme}
             setTheme={setTheme} />
-            <MobileMenuButton onClick={() => setToggleMenu(true)}  >
-                <IconCategory />
+            <MobileMenuButton  onClick={() => setToggleMenu(true)}  >
+                <IconMenu2 />
             </MobileMenuButton>
     </Head>
   )
