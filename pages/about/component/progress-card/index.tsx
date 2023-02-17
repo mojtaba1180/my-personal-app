@@ -1,19 +1,29 @@
 
-import { Circle } from 'rc-progress';
-import { ProgressCardContainer,ProgressCardProgressBar,ProgressCardContentContainer,ProgressCardTitle } from './progress-card.style';
-function ProgressCard() {
+import { Line } from 'rc-progress';
+import { useTheme } from 'styled-components';
+import { ProgressCardContainer, ProgressCardContentContainer, ProgressCardProgressBar, ProgressCardTitle } from './progress-card.style';
 
+interface Prop {
+  title:String,
+  progressNumber:number
+}
+
+function ProgressCard({title,progressNumber}:Prop) {
+const theme = useTheme();
+console.log(theme)
 return (
     <ProgressCardContainer>
       <ProgressCardProgressBar>
-        <Circle 
+        <Line 
           className="bar"
-          percent={50}
+          percent={progressNumber}
          strokeWidth={4}
-         strokeColor="#D3D3D3" />  
+         trailWidth={1}
+         strokeColor={theme.textColor} 
+         />  
         </ProgressCardProgressBar >
       <ProgressCardContentContainer>
-        <ProgressCardTitle> JavaScript </ProgressCardTitle>
+        <ProgressCardTitle> {title} </ProgressCardTitle>
       </ProgressCardContentContainer>
     </ProgressCardContainer>
 )

@@ -5,6 +5,31 @@ body{
   background-color: ${(props) => props.theme.bodyColor};
   color: ${(props) => props.theme.textColor}
 }
+
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: blue orange;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 2px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: ${props => props.theme.textColor};
+  border-radius: 20px;
+  width: 3px;
+  border: 0;
+  position: absolute;
+}
+
+
 `;
 
 

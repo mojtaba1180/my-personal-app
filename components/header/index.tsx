@@ -1,7 +1,9 @@
 import Link from 'next/link';
-import ThemeButton from '../themeButton';
 import { useRouter } from 'next/router';
+import ThemeButton from '../themeButton';
 
+import { IconMenu2, IconX } from '@tabler/icons-react';
+import { useEffect, useState } from 'react';
 import {
     Header as Head,
     HeaderLogo,
@@ -9,8 +11,6 @@ import {
     HeaderMenuList,
     MobileMenuButton
 } from './header-style';
-import { IconMenu2,IconX } from '@tabler/icons-react';
-import { useState,useEffect } from 'react';
 interface Header {
     setTheme: Function;
     theme:boolean
@@ -39,16 +39,20 @@ const Header = ({setTheme, theme}:Header) => {
         <HeaderMenu toggleMenu={toggleMenu} >
             <HeaderMenuList>
             <Link href="/">
-                    <li>
-                        <span>Home</span>
-                    </li>
-                </Link>
+                <li>
+                    <span>Home</span>
+                </li>
+            </Link>
             <Link href="/about">
-                    <li>
-                        <span>About</span>
-                    </li>
-                </Link>
-                <li><span>Services</span></li>
+                <li>
+                    <span>About</span>
+                </li>
+            </Link>
+                <Link href="/services">
+                <li>
+                    <span>Services</span>
+                </li>
+            </Link>
                 <li><span>portfolio</span></li>
                 <li><span>contact</span></li>
             </HeaderMenuList>

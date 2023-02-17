@@ -1,7 +1,5 @@
 import ReactTyped from "react-typed"
-import Section from "../../components/section"
-import { AboutContainer, AboutContainerContent, AboutSkillsContainer } from "./about.style"
-import ProgressCard from "./component/progress-card"
+import { AboutContainer, AboutContainerContent, AboutContainerTitle } from "./about.style"
 
 function About() {
   const content = `
@@ -18,38 +16,19 @@ function About() {
 
   return (
     <AboutContainer>
-        <Section
-      title={"WHO AM I?"}
-      >
-        <AboutContainerContent>
-          <ReactTyped
-            strings={[
-              content
-            ]}
-            typeSpeed={30}
-            backSpeed={100}
-          />
-        </AboutContainerContent>
-      </Section>
-      <Section
-       title={"MY SKILLS"}
-       >
+      <AboutContainerTitle>
+        WHO AM I?
+      </AboutContainerTitle>
       <AboutContainerContent>
-        <AboutSkillsContainer>
-            <ProgressCard progressNumber={30} title="Nodejs" />
-            <ProgressCard progressNumber={80} title="Content-provider" />
-            <ProgressCard progressNumber={60} title="Sql" />
-            <ProgressCard progressNumber={80} title="Source Control [GIT] and CI/CD" />
-            <ProgressCard progressNumber={70} title="Caching [Redis/Memcached]" />
-            <ProgressCard progressNumber={70} title="Laravel" />
-            <ProgressCard progressNumber={80} title="RESTful api" />
-            <ProgressCard progressNumber={70} title="Auth0" />
-            <ProgressCard progressNumber={85} title="Microservices Rabbitmq" />
-            <ProgressCard progressNumber={50} title="Docker" />
-
-        </AboutSkillsContainer>
+        <ReactTyped
+          strings={[
+            content
+          ]}
+          typeSpeed={30}
+          backSpeed={100}
+        />
       </AboutContainerContent>
-      </Section>
+      {/* <AboutCategoryTag /> */}
     </AboutContainer>
   )
 }
