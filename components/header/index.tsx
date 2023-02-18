@@ -33,7 +33,7 @@ const Header = ({setTheme, theme}:Header) => {
   return (
     <Head>
         <HeaderLogo>
-            SGR
+            Zibafar
         </HeaderLogo>
        
         <HeaderMenu toggleMenu={toggleMenu} >
