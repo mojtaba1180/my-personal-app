@@ -1,26 +1,25 @@
-import { IconBrandInstagram,IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react'
+import { IconBrandGithub, IconBrandInstagram, IconBrandLinkedin } from '@tabler/icons-react'
 import type { NextPage } from 'next'
-import Link from 'next/link'
-import { Content, Creative, Title } from './home-style'
+import { Content, Creative, Title } from '../styles/home-style'
 
 const Home: NextPage = () => {
   return (
    <Content>
       <Title  >
-        <span>Mojtaba Asghari</span>
+        <span>Sajad Zibafar</span>
       </Title>
       <Creative>
         <p>
-        <span>I am a</span> freelancer
+        <span>I am a</span> backend developer
         </p>
         <div>
-          <a href="https://instagram.com/mojtaba_1180" target="_blank"rel="noopener noreferrer"   >
+          <a href="https://instagram.com/zibafar" target="_blank"rel="noopener noreferrer"   >
             <IconBrandInstagram className="social" />
           </a>
-          <a href="https://github.com/mojtaba1180" target="_blank" rel="noopener noreferrer"  >
+          <a href="https://github.com/zibafar" target="_blank" rel="noopener noreferrer"  >
           <IconBrandGithub  className="social"/>
           </a>
-          <a href="https://instagram.com/mojtaba_1180" target="_blank" rel="noopener noreferrer" >
+          <a href="https://instagram.com/zibafar" target="_blank" rel="noopener noreferrer" >
           <IconBrandLinkedin className="social" />
           </a>
         </div>

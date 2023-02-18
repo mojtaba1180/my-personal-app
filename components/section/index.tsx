@@ -1,3 +1,4 @@
+import { SectionContainer, SectionTitle } from "./section.style";
 
 interface Prop{
     children:any,
@@ -5,10 +6,10 @@ interface Prop{
 }
 function Section({children,title}:Prop){
     return (
-        <div>
-            <div>{title}</div>
+        <SectionContainer>
+            <SectionTitle>{title}</SectionTitle>
             {children}
-        </div>
+        </SectionContainer>
     )
 }
 

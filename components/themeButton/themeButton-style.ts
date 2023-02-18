@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { ThemeType } from "../../types/styled-component";
 
 const lightAnimation = keyframes`
     0%{transform: rotate(-30deg);}
@@ -16,13 +17,13 @@ const Button = styled.button`
   background-color: transparent;
   border: none;
   outline: none;
-  color:  ${(props) => props.theme.textColor};
+  color:  ${(props: ThemeType) => props.theme.textColor};
   border-radius: 100px;
   padding: 8px;
   transition: all .3s;
   &:hover{
     cursor: pointer;
-    background-color: ${(props) => props.theme.mainBg};
+    background-color: ${(props: ThemeType) => props.theme.mainBg};
   }
   & .light{
     animation: ${lightAnimation} .3s cubic-bezier(0.455, 0.03, 0.515, 0.955) ;

@@ -12,6 +12,7 @@ export const AboutContainer = styled.div`
     flex-direction: column;
     padding: 1em;
     overflow-y: auto;
+    overflow-x: hidden;
 `;
 export const AboutContainerContent = styled.p`
     display: block;
@@ -22,9 +23,10 @@ export const AboutContainerContent = styled.p`
     margin-bottom: 2em;
 `;
 export const AboutSkillsContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: first baseline;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    @media screen and (max-width:920px) {
+      grid-template-columns: auto auto;      
+    }
     gap:1em;
 `;

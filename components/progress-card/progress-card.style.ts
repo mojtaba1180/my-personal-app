@@ -1,15 +1,17 @@
 import styled from 'styled-components';
+import { ThemeType } from '../../types/styled-component';
 
 export const ProgressCardContainer = styled.div`
     max-width: 220px;
-    width:45%;
-    max-height: 100px;
+    width:100%;
+    max-height: 300px;
+    min-height: 150px;
     height: 100%;
     display: flex;
     justify-content:space-between;
     flex-direction: column-reverse;
     align-items:start;
-    border:1px solid #ccc4;
+    border:1px solid ${(props: ThemeType) => props.theme.borderColor};
     border-radius: 10px;
     padding: 1em;
     overflow: hidden;
@@ -35,13 +37,14 @@ export const ProgressCardContent = styled.div`
 
 `;
 export const ProgressCardProgressBar = styled.div`
-    width:fit-content;
+    width:100%;
     height:100%;
     display:flex;
     justify-content:center;
     align-items:center;
+    gap:1em;
     .bar{
-        width:80px;
+        width:100%;
         
     }
 `;

@@ -1,7 +1,8 @@
-import ReactTyped from "react-typed"
-import { AboutContainer, AboutContainerContent, AboutContainerTitle } from "./about.style"
+import ServicesCategoryTag from "../../components/category-tag"
+import Section from "../../components/section"
+import { ServicesContainer } from "../../styles/services.style"
 
-function About() {
+function Services() {
   const content = `
             <b>Hi I'm Sajad Zibafar</b> I was born in Tehran, Iran in 1989.
             <br/> I studied Software Engineering at the University of Kharazmi in Tehran, Iran.
@@ -15,22 +16,12 @@ function About() {
   `
 
   return (
-    <AboutContainer>
-      <AboutContainerTitle>
-        WHO AM I?
-      </AboutContainerTitle>
-      <AboutContainerContent>
-        <ReactTyped
-          strings={[
-            content
-          ]}
-          typeSpeed={30}
-          backSpeed={100}
-        />
-      </AboutContainerContent>
-      {/* <AboutCategoryTag /> */}
-    </AboutContainer>
+    <ServicesContainer>
+      <Section title={"Services"} >
+      <ServicesCategoryTag />
+      </Section>
+    </ServicesContainer>
   )
 }
 
-export default About
+export default Services

@@ -5,17 +5,18 @@ interface Props {
     size?: string;
 }
 
-export const AboutContainer = styled.div`
+export const ServicesContainer = styled.div`
     width:100%;
     height:100%;
-    display: flex;
-    flex-direction: column;
+    display: block;
+    /* flex-direction: column; */
     padding: 1em;
     overflow-y: auto;
+    overflow-x: hidden;
 `;
 
 
-export const AboutContainerTitle = styled.div<Props>`
+export const ServicesContainerTitle = styled.div<Props>`
     display:flex;
     font-size: ${props => props.size ? props.size : '50px'};
     text-transform: uppercase;
@@ -45,7 +46,7 @@ export const AboutContainerTitle = styled.div<Props>`
      }
 `;
 
-export const AboutContainerContent = styled.p`
+export const ServicesContainerContent = styled.p`
     font-weight: 200;
     font-size : 20px;
     height:700px

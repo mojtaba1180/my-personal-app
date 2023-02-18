@@ -48,12 +48,16 @@ const Header = ({setTheme, theme}:Header) => {
                     <span>About</span>
                 </li>
             </Link>
-                <Link href="/services">
+            <Link href="/services">
                 <li>
                     <span>Services</span>
                 </li>
             </Link>
-                <li><span>portfolio</span></li>
+             <Link href="/experience">
+                <li>
+                    <span>experience</span>
+                </li>
+            </Link>
                 <li><span>contact</span></li>
             </HeaderMenuList>
         <IconX className="close-btn" onClick={() => setToggleMenu(false)} />

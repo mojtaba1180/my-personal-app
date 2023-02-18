@@ -1,16 +1,22 @@
 import styled, { createGlobalStyle, keyframes } from "styled-components";
+
+
+interface Prop {
+  theme: any,
+}
+
 export const GlobalStyle = createGlobalStyle`
 body{
   transition: all .3s;
-  background-color: ${(props) => props.theme.bodyColor};
-  color: ${(props) => props.theme.textColor}
+  background-color: ${(props: Prop) => props.theme.bodyColor};
+  color: ${(props: Prop) => props.theme.textColor}
 }
 
 
 /* Works on Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: blue orange;
+  scrollbar-color: ${props => props.theme.textColor} ;
 }
 
 /* Works on Chrome, Edge, and Safari */
@@ -48,7 +54,7 @@ export const Main = styled.main`
     width:100%;
     height:90%;
     display: flex;
-    background-color: ${(props) => props.theme.mainBg};
+    background-color: ${(props: Prop) => props.theme.mainBg};
     overflow: hidden;
     position: relative;
     @media screen and (max-width:920px) {
@@ -147,7 +153,7 @@ export const Shape = styled.div`
 
   }
   &.green{
-    background-color: ${(props) => props.theme.textColor};
+    background-color: ${(props: Prop) => props.theme.textColor};
     transition: 6s;
     animation: ${shapeOne} ${timer} infinite 2s  ;
 

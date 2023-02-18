@@ -4,7 +4,7 @@ import { CategoryTagContainer, CategoryTagContainerItem, CategoryTagIcon, Catego
 
 
 
-function AboutCategoryTagItem(){
+function ServicesCategoryTagItem(){
         return (
             <CategoryTagContainerItem>
                     <CategoryTagIcon>
@@ -17,11 +17,8 @@ function AboutCategoryTagItem(){
         )
 }
 
-function AboutCategoryTag() {
-      const itemVariants = {
-        initial: { x: "-10px", opacity: 0 },
-        animate: { x: 0, opacity: 1 },
-      };
+function ServicesCategoryTag() {
+
     return (
         <CategoryTagContainer>
             {
@@ -29,12 +26,11 @@ function AboutCategoryTag() {
                     return (
                         <motion.div
                           key={i}
-                          variants={itemVariants}
-                          initial="initial"
-                          animate="animate"
+                          initial={{ x: "-10px", opacity: 0 }}
+                          animate={{ x: 0, opacity: 1 }}
                           transition={{ duration: 0.3, delay: i / 10 }}
                          >
-                            <AboutCategoryTagItem  />
+                            <ServicesCategoryTagItem  />
                         </motion.div>
                     )
                 })
@@ -43,4 +39,4 @@ function AboutCategoryTag() {
     )
 }
 
-export default AboutCategoryTag;
+export default ServicesCategoryTag;

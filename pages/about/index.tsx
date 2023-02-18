@@ -1,8 +1,9 @@
-import ReactTyped from "react-typed"
-import Section from "../../components/section"
-import { AboutContainer, AboutContainerContent, AboutSkillsContainer } from "./about.style"
-import ProgressCard from "./component/progress-card"
-
+import { motion } from 'framer-motion';
+import ReactTyped from "react-typed";
+import ProgressCard from "../../components/progress-card";
+import Section from "../../components/section";
+import { skills } from '../../data/data';
+import { AboutContainer, AboutContainerContent, AboutSkillsContainer } from "../../styles/about.style";
 function About() {
   const content = `
             <b>Hi I'm Sajad Zibafar</b> I was born in Tehran, Iran in 1989.
@@ -36,16 +37,20 @@ function About() {
        >
       <AboutContainerContent>
         <AboutSkillsContainer>
-            <ProgressCard progressNumber={30} title="Nodejs" />
-            <ProgressCard progressNumber={80} title="Content-provider" />
-            <ProgressCard progressNumber={60} title="Sql" />
-            <ProgressCard progressNumber={80} title="Source Control [GIT] and CI/CD" />
-            <ProgressCard progressNumber={70} title="Caching [Redis/Memcached]" />
-            <ProgressCard progressNumber={70} title="Laravel" />
-            <ProgressCard progressNumber={80} title="RESTful api" />
-            <ProgressCard progressNumber={70} title="Auth0" />
-            <ProgressCard progressNumber={85} title="Microservices Rabbitmq" />
-            <ProgressCard progressNumber={50} title="Docker" />
+          {
+             skills.map((item,idx) => {
+                return (
+                   <motion.div
+                    key={idx}
+                    initial={{ x: "-10px", opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.3, delay: idx / 10 }}
+                    >
+                      <ProgressCard key={idx} progressNumber={item.number} title={item.title} />
+                    </motion.div>
+                )
+             })
+          }
 
         </AboutSkillsContainer>
       </AboutContainerContent>

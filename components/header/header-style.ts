@@ -1,4 +1,8 @@
 import styled from 'styled-components';
+import { ThemeType } from '../../types/styled-component';
+interface HeaderMenuProps {
+    toggleMenu: boolean
+}
 export const Header = styled.header`
     width:100%;
     display:flex;
@@ -11,14 +15,14 @@ export const HeaderLogo = styled.div`
     display: flex;
     justify-content: start;
     align-items: center;
-    color:${props => props.theme.textColor};
+    color:${(props: ThemeType) => props.theme.textColor};
     transition:all .3s;
      @media screen and  (max-width:920px){
         width:100%;
      }
 `;
 
-export const HeaderMenu = styled.div`
+export const HeaderMenu = styled.div <HeaderMenuProps>`
     display: flex;
     width: 50%;
     justify-content: end;
@@ -31,12 +35,12 @@ export const HeaderMenu = styled.div`
         position:absolute;
         top:0;
         right: 0;
-        visibility: ${props => props.toggleMenu ? "visible" : "hidden"};
-        opacity: ${props => props.toggleMenu ? "1" : "0"};
-        filter:blur(${props => props.toggleMenu ? 0 : "20px"});
+        visibility: ${(props: ThemeType) => props.toggleMenu ? "visible" : "hidden"};
+        opacity: ${(props: ThemeType) => props.toggleMenu ? "1" : "0"};
+        filter:blur(${(props: ThemeType) => props.toggleMenu ? 0 : "20px"});
         width:100%;
         height:100%;
-        background:  ${(props) => props.theme.bodyColor};
+        background:  ${(props: ThemeType) => props.theme.bodyColor};
         z-index:9999;
         display:flex;
         justify-content:center;
@@ -69,7 +73,7 @@ export const HeaderMenuList = styled.ul`
         border: none;
         cursor: pointer;
         min-width: 100px;
-        color: ${props => props.theme.textColor};
+        color: ${(props: ThemeType) => props.theme.textColor};
         & span {         
             position: relative;
             display: inline-block;
@@ -82,7 +86,7 @@ export const HeaderMenuList = styled.ul`
             padding: 3px 10px;
         }
         &:hover{
-            color:${props => props.theme.textHoverColor};
+            color:${(props: ThemeType) => props.theme.textHoverColor};
         }
         &::before{
             position: absolute;
@@ -92,7 +96,7 @@ export const HeaderMenuList = styled.ul`
             left: 0;
             height: 100%;
             width: 0;
-            background: ${props => props.theme.bgColor};
+            background: ${(props: ThemeType) => props.theme.bgColor};
             outline: 0!important;
             transition: 0.3s ease-out;
         }
@@ -118,7 +122,7 @@ export const MobileMenuButton = styled.button`
     background-color: transparent;
     border: none;
     outline: none;
-    color:  ${(props) => props.theme.textColor};
+    color:  ${(props: ThemeType) => props.theme.textColor};
     border-radius: 100px;
     transition: all .3s;
     padding: 7px 5px 5px 5px ;
@@ -127,6 +131,6 @@ export const MobileMenuButton = styled.button`
     }
     &:hover{
         cursor: pointer;
-        background-color: ${(props) => props.theme.mainBg};
+        background-color: ${(props: ThemeType) => props.theme.mainBg};
   }
 `;
